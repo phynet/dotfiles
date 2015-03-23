@@ -1,7 +1,8 @@
-#export JAVA_HOME="/usr/libexec/java_home -v 1.7"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home
+
 # The next line updates PATH for the Google Cloud SDK.
 export PATH=/Users/medianet/google-cloud-sdk/bin:$PATH
+export PATH="$PATH:/Users/medianet/Projects/AIRSDK_Compiler/bin/"
 
 # The next line enables bash completion for gcloud.
 source /Users/medianet/google-cloud-sdk/arg_rc
@@ -10,12 +11,45 @@ source /Users/medianet/google-cloud-sdk/arg_rc
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-
 #Bash terminal colors
 #export PS1="\[$(tput bold)\]\[$(tput setaf 3)\]\u.\h\\$: \[$(tput sgr0)\]"
 export PS1="\[$(tput bold)\]\[$(tput setaf 3)\][\t \u >> \w:]\\$: \[$(tput sgr0)\]"
 
 export PATH=/usr/local/git/bin:$PATH
 
+#mysql PATH
 export PATH="/usr/local/mysql/bin:$PATH"
+
+alias reloadAlias="source ~/.bashrc"
+alias path_sandwich="cd ~/Projects/Cucumber-Sandwich/cucumber-sandwich"
+alias cucumber_sandwich="java -jar target/cucumber-sandwich.jar -f /Users/medianet/Projects/BDD-Compass/test-reports/ -o /Users/medianet/Projects/BDD-Compass/test-reports"
+
+#export ANDROID_HOME=/usr/local/opt/android-sdk
+#export PATH_ANDROID=$PATH_ANDROID:$ANDROID_HOME:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/add-ons
+export HOME=/Users/medianet
+export ANDROID_HOME=$HOME/Desktop/Eclipse
+export PATH_ANDROID=$PATH_ANDROID:$ANDROID_HOME:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/add-ons
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+export GRADLE_HOME=$HOME/gradle-2.2.1/bin
+export PATH="$PATH_ANDROID:$GRADLE_HOME:$PATH"
+export NPM_PATH=/usr/local/bin
+export PATH="$PATH_ANDROID/platform-tools:$GRADLE_HOME:$NPM_PATH:$PATH"
+
+#
+# sdk tools usando brew install está localizado en /usr/local/Cellar/android-sdk/23.0.2
+#
+
+
+export DYLD_LIBRARY_PATH=/Users/medianet/Projects/SDK-IPA-INSTALLER/imobiledevice-macosx/:$DYLD_LIBRARY_PATH
+export PATH=${PATH}:/Users/medianet/Projects/SDK-IPA-INSTALLER/imobiledevice-macosx/
+
+#export CODESIGN_ALLOCATE="/Applications/Xcode-6/Xcode.app/Contents/Developer/usr/bin/codesign_allocate"
+export CODESIGN_ALLOCATE="/Applications/Xcode-6/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin"
+
+alias device_target_iphone1="e48cfa3ee368531e5f36b0a9beffad4316dbce90"
+alias device_endpoint_iphone1="http://192.168.33.109:37265"
+
+alias jenkins-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist"
+alias jenkins-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist"
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
