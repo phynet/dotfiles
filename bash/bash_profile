@@ -121,12 +121,6 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 alias reload="source ~/.bashrc"
 
 #
-# Show/hide hidden files in Finder
-#
-alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
-#
 #  Lock the screen (when going AFK) instead of the basic cmmd + shift + q this will present a 3D block screen
 #
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
@@ -166,3 +160,9 @@ alias gp = "git pull"
 
 # Git Push
 alias gpush = "git push"
+
+# Git Status
+alias gs='git status'
+
+# Git Log
+alias gl='git log'
