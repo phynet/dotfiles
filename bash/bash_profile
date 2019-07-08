@@ -1,7 +1,7 @@
 #
 # Home
 # 
-export HOME=/Users/myUSer
+export HOME=/Users/phynet
 
 #
 # JAVA Home (prints version in terminal)
@@ -30,7 +30,10 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 #
 # terminal colors
 #  
-export PS1="\[$(tput bold)\]\[$(tput setaf 3)\][\t \u >> \w:]\\$: \[$(tput sgr0)\]"
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+export CLICOLOR=1
+//export PS1="\[$(tput bold)\]\[$(tput setaf 3)\][\t \u >> \w:]\\$: \[$(tput sgr0)\]"
+
 
 #
 # git
@@ -63,23 +66,10 @@ export PATH="$PATH_ANDROID/platform-tools:$GRADLE_HOME:$NPM_PATH:$PATH"
 #
 export NODE_PATH=/usr/local/lib/node_modules/
 
-
-#
-# sdk tools usando brew install está localizado en /usr/local/Cellar/android-sdk/23.0.2
-#
-export DYLD_LIBRARY_PATH=/Users/MyUser/Projects/SDK-IPA-INSTALLER/imobiledevice-macosx/:$DYLD_LIBRARY_PATH
-export PATH=${PATH}:/Users/MyUser/Projects/SDK-IPA-INSTALLER/imobiledevice-macosx/
-
-#export CODESIGN_ALLOCATE="/Applications/Xcode-6/Xcode.app/Contents/Developer/usr/bin/codesign_allocate"
-export CODESIGN_ALLOCATE="/Applications/Xcode-6/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin"
-
 #
 # open files with sublime text, use: open whateeverfile
 #
 sudo ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /usr/local/bin/sublime
-
-
-
 
 
 #              #
@@ -93,49 +83,31 @@ sudo ln -s /Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl /u
 # Reload Terminal with comand 
 # 
 
-alias reloadAlias="source ~/.bashrc"
-
-#
-# Cucumber paths
-# 
-alias path_sandwich="cd ~/Projects/Cucumber-Sandwich/cucumber-sandwich"
-alias cucumber_sandwich="java -jar target/cucumber-sandwich.jar -f /Users/medianet/Projects/BDD-Compass/test-reports/ -o /Users/medianet/Projects/BDD-Compass/test-reports"
-
-#
-# Aliases for starting Calabash's iphone 
-# 
-
-alias device_target_iphone1="e48cfa3ee368531e5f36b0a9beffad4316dbce90"
-alias device_endpoint_iphone1="http://192.168.33.109:37265"
+alias reload="source ~/.bashrc"
 
 #
 # Jenkins 
 # 
 
-alias jenkins-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist"
-alias jenkins-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist"
+alias jstart="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist"
+alias jstop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.jenkins.plist"
 
 #
 # Load RVM into a shell session *as a function*
 #
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 
-#
-# alias to change between xcodes
-#
-alias xcode73="sudo xcode-select --switch /Applications/xcode73/Xcode.app/Contents/Developer"
-alias xcode731="sudo xcode-select --switch /Applications/xcode731/Xcode.app/Contents/Developer"
-alias xcode8="sudo xcode-select --switch /Applications/xcode8/Xcode.app/Contents/Developer"
-
+#          #
+#   Utils  #
+#          #
 
 #
-# Navigate
+# Navigation
 #
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-
 
 #
 # Show/hide hidden files in Finder
@@ -144,16 +116,53 @@ alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && kill
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
 #
-#  Lock the screen (when going AFK)
+# Reload Terminal with comand 
+# 
+alias reload="source ~/.bashrc"
+
+#
+# Show/hide hidden files in Finder
+#
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+#
+#  Lock the screen (when going AFK) instead of the basic cmmd + shift + q this will present a 3D block screen
 #
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 #
-#  Git alias, to remove .DS_Store files in project
+# XCODE 
 #
-alias git-ds="find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch"
+
+
+# Cocoa Pods commands
+
+alias pi="pod install"
+alias bi="bundle install"
+alias yolo="bi && pi"
+
+# alias to change between xcodes
+
+alias xcode73="sudo xcode-select --switch /Applications/xcode73/Xcode.app/Contents/Developer"
+alias xcode731="sudo xcode-select --switch /Applications/xcode731/Xcode.app/Contents/Developer"
+alias xcode8="sudo xcode-select --switch /Applications/xcode8/Xcode.app/Contents/Developer"
 
 #
-#  Git alias, to delete branch. Use: $ gitdb nameBranch
+#  GIT Commands
 #
+
+#  Git alias, to remove .DS_Store files in project
+alias git-ds="find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch"
+
+#  Git alias, to delete branch. Use: $ gitdb nameBranch
 alias gitdb='function _branch_delete(){ echo "Deleting branch: $1"; git push origin --delete "$1"; };_branch_delete'
+
+# Git Ammend
+alias gammend="git commit --amend -m "
+
+# Git Pull
+alias gp = "git pull"
+
+# Git Push
+alias gpush = "git push"
