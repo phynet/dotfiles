@@ -1,2 +1,1 @@
-alias maiap="cd ~/Projects/es.medianet.iphone/mns-maiap/iOS"
 alias reload="source ~/.bash_profile"
