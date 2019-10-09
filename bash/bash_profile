@@ -143,6 +143,13 @@ alias xcode731="sudo xcode-select --switch /Applications/xcode731/Xcode.app/Cont
 alias xcode8="sudo xcode-select --switch /Applications/xcode8/Xcode.app/Contents/Developer"
 
 #
+#  Xcode list simulator and delete not available ones
+#
+
+alias xboom="xcrun simctl delete unavailable"
+alias xlist="xcrun simctl list"
+
+#
 #  GIT Commands
 #
 
