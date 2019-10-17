@@ -108,6 +108,8 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
 
 #
 # Show/hide hidden files in Finder
@@ -124,10 +126,6 @@ alias reload="source ~/.bashrc"
 #  Lock the screen (when going AFK) instead of the basic cmmd + shift + q this will present a 3D block screen
 #
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
-#
-# XCODE 
-#
 
 
 # Cocoa Pods commands
@@ -148,6 +146,7 @@ alias xcode8="sudo xcode-select --switch /Applications/xcode8/Xcode.app/Contents
 
 alias xboom="xcrun simctl delete unavailable"
 alias xlist="xcrun simctl list"
+alias xversion="/usr/bin/xcodebuild -version"
 
 #
 #  GIT Commands
