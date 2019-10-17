@@ -199,9 +199,20 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ls='colorls — light — sort-dirs — report'
-alias lc='colorls — tree — light'
+#To using spaceship we need fonts: 
+# brew cask install font-monoid-nerd-font
+# brew cask install font-mononoki-nerd-font (we use this one for glyph symbols)
+# brew cask install font-hack-nerd-font
+
+SPACESHIP_PROMPT_ADD_NEWLINE="true"
+SPACESHIP_CHAR_SYMBOL="\uf0e7"
+SPACESHIP_CHAR_SUFFIX=(" ")
+SPACESHIP_CHAR_COLOR_SUCCESS="green"
+SPACESHIP_PROMPT_DEFAULT_PREFIX="$USER"
+SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
+SPACESHIP_USER_SHOW="true"
 SPACESHIP_XCODE_SHOW_LOCAL="true"
+SPACESHIP_XCODE_SHOW_GLOBAL="true"
 SPACESHIP_XCODE_SYMBOL="🛠"
 SPACESHIP_TIME_SHOW="true"
 SPACESHIP_USER_SHOW="true"
