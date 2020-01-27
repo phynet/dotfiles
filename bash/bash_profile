@@ -7,6 +7,7 @@ export HOME=/Users/phynet
 # JAVA Home (prints version in terminal)
 #  
 
+# Prints java home
 jhome () {
   export JAVA_HOME=`/usr/libexec/java_home $@`
   echo "JAVA_HOME:" $JAVA_HOME
@@ -14,7 +15,30 @@ jhome () {
   java -version
 }
 
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home'
+# List Java 8 sdk
+jlist() {
+    /usr/libexec/java_home -V
+}
+# Select Java 8 sdk
+j8() {
+    /usr/libexec/java_home -v 1.8
+    echo "Java PATH: $JAVA_HOME "
+}
+# with a specific version of java jdk
+export JAVA_HOME='/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home'
+
+#install java 8
+# brew tap adoptopenjdk/openjdk
+# brew cask install adoptopenjdk8
+# brew cask install adoptopenjdk9
+# brew cask install adoptopenjdk10
+# brew cask install adoptopenjdk11
+
+# How to configure and set JAVA HOME
+# https://mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/
+
+
+
 
 #
 # Google Cloud SDK.
@@ -140,8 +164,8 @@ alias xcode73="sudo xcode-select --switch /Applications/xcode73/Xcode.app/Conten
 alias xcode731="sudo xcode-select --switch /Applications/xcode731/Xcode.app/Contents/Developer"
 alias xcode8="sudo xcode-select --switch /Applications/xcode8/Xcode.app/Contents/Developer"
 
-#
-#  Xcode list simulator and delete not available ones
+#  XCODE 
+# list simulator and delete not available ones
 #
 
 alias xboom="xcrun simctl delete unavailable"
@@ -172,3 +196,6 @@ alias gs='git status'
 
 # Git Log
 alias gl='git log'
+
+# Adding some colors using the gem colorls
+source $(dirname $(gem which colorls))/tab_complete.sh
