@@ -20,9 +20,12 @@ jlist() {
     /usr/libexec/java_home -V
 }
 # Select Java 8 sdk
+# Select Java 8 sdk
 j8() {
     /usr/libexec/java_home -v 1.8
-    echo "Java PATH: $JAVA_HOME "
+    export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
+    echo "Java PATH: $JAVA_HOME"
+    java -version
 }
 # with a specific version of java jdk
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home'
