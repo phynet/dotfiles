@@ -1,7 +1,13 @@
+#!/bin/bash
 #
 # Home
 # 
 export HOME=/Users/phynet
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$PATH:$HOME/bin"
+fi
 
 #
 # JAVA Home (prints version in terminal)
@@ -19,6 +25,7 @@ jhome () {
 jlist() {
     /usr/libexec/java_home -V
 }
+
 # Select Java 8 sdk
 # Select Java 8 sdk
 j8() {
@@ -29,6 +36,16 @@ j8() {
 }
 # with a specific version of java jdk
 export JAVA_HOME='/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home'
+
+# MAVEN
+mavenmsl() {
+    #/usr/local/Cellar/maven/apache-maven-3.3.9/libexec
+    export M2_HOME=/usr/local/Cellar/maven/3.3.9/libexec
+    export PATH=$PATH:$M2_HOME/bin
+    echo "Maven PATH: $M2_HOME"
+    echo "Maven version bellow: "
+    mvn -version
+}
 
 #install java 8
 # brew tap adoptopenjdk/openjdk
@@ -41,6 +58,12 @@ export JAVA_HOME='/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/
 # https://mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/
 
 
+#RVM and ZSH
+export NPM_PATH="/usr/local/bin"
+export PATH=$HOME/.rvm/gems/ruby-2.5.8/bin:$HOME/.rvm/gems/ruby-2.5.1/bin:$HOME/.rvm/gems/ruby-2.5.5/bin:$HOME/.rvm/gems/ruby-2.4.0/bin:$PATH:/usr/local/git/bin:$NPM_PATH
+export ZSH=$HOME/.oh-my-zsh
+export PATH=$ZSH/bin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 
 #
@@ -59,7 +82,7 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 #  
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 export CLICOLOR=1
-//export PS1="\[$(tput bold)\]\[$(tput setaf 3)\][\t \u >> \w:]\\$: \[$(tput sgr0)\]"
+#export PS1="\[$(tput bold)\]\[$(tput setaf 3)\][\t \u >> \w:]\\$: \[$(tput sgr0)\]"
 
 
 #
@@ -72,6 +95,14 @@ export PATH=/usr/local/git/bin:$PATH
 # 
 export PATH="/usr/local/mysql/bin:$PATH"
 
+#
+# MAVEN
+#
+
+
+export M2_HOME=/usr/local/Cellar/maven/3.3.9/libexec
+export M2=$M2_HOME/bin
+export PATH=$PATH:$M2_HOME/bin
 
 #
 # Android
@@ -80,7 +111,7 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH_ANDROID=$PATH_ANDROID:$ANDROID_HOME:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/add-ons
 export GRADLE_HOME=$HOME/gradle-2.2.1/bin
 export PATH="$PATH_ANDROID/platform-tools:$GRADLE_HOME:$PATH"
-
+ANDROID_HOME=$HOME/Library/Android/sdk
 
 #
 # NPM
