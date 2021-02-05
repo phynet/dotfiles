@@ -22,7 +22,7 @@ https://github.com/athityakumar/colorls#installation
 
     gem install colorls
     
-Use in .zshrc **Avit** theme (copy the file in this repo to be sure)
+- Use in .zshrc **Avit** theme (copy the file in this repo to be sure)
 
     ZSH_THEME="avit"
     
