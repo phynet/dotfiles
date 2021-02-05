@@ -6,6 +6,8 @@ My personal dotfiles
 Shell
 ========
 
+![shellNow](https://user-images.githubusercontent.com/724536/107019256-bb9dab00-67a1-11eb-9506-fb083421b336.png)
+
 - Install nerd fonts
 
 Install the patched fonts of powerline nerd-font and/or font-awesome. Have a look at the Nerd Font README for more installation instructions.
