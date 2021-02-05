@@ -3,6 +3,27 @@ dotfiles
 
 My personal dotfiles
 
+Shell
+========
+
+- Install nerd fonts
+
+Install the patched fonts of powerline nerd-font and/or font-awesome. Have a look at the Nerd Font README for more installation instructions.
+https://github.com/ryanoasis/nerd-fonts/blob/master/readme.md#option-4-homebrew-fonts
+
+    brew tap homebrew/cask-fonts
+    brew install --cask font-hack-nerd-font
+
+- Install colorls
+
+https://github.com/athityakumar/colorls#installation
+
+    gem install colorls
+    
+Use in .zshrc **Avit** theme (copy the file in this repo to be sure)
+
+    ZSH_THEME="avit"
+    
 
 Shell Image Config
 ========
