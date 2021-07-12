@@ -1,0 +1,5 @@
+# working on two branches simultaneously
+# Creates a worktree 
+# https://stackoverflow.com/questions/2048470/git-working-on-two-branches-simultaneously
+
+git worktree add ../ios-app-dev dev
