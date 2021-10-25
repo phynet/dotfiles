@@ -230,6 +230,10 @@ alias gs='git status'
 
 # Git Log
 alias gl='git log'
+alias glm='git log --oneline --graph -4 --decorate'
+
+# Git Reset 
+alias gres1="git reset --soft HEAD~1"
 
 # Adding some colors using the gem colorls
 source $(dirname $(gem which colorls))/tab_complete.sh
